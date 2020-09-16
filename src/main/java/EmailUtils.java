@@ -34,17 +34,17 @@ public class EmailUtils {
         }
     }
 
-    public Boolean isDomainNameValid(String domainName) {
+    public Boolean isDomainNameValid(String name) {
 
-        if (domainName.contains("ABC") && domainName.contains(".com")) {
-            String blackList = domainName.substring(0, domainName.indexOf(".com"));
-            int length = blackList.length();
+        if (name.contains("ABC") && name.contains(".com")) {
+            String domainName = name.substring(0, name.indexOf(".com"));
+            int length = domainName.length();
             int middle = (length / 2) - 1;
 
             if ((length % 2) == 0) {
-                return (blackList.charAt(middle + 1) == 'B' || blackList.charAt(middle) == 'B');
+                return (domainName.charAt(middle + 1) == 'B' || domainName.charAt(middle) == 'B');
             } else {
-                return blackList.charAt(middle + 1) == 'B';
+                return domainName.charAt(middle + 1) == 'B';
             }
         }
         return true;
